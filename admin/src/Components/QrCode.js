@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Card, CardContent, Grid, TextField, makeStyles, Button } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
+import { Container, Card, CardContent, Grid, TextField, makeStyles, Button, Link } from '@material-ui/core';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -37,7 +38,7 @@ function QrCode() {
         <div>
             <Container className={classes.container}>
                 <Card>
-                    <h2 className={classes.title}>Generate and Download QR code</h2>
+                    <h2 className={classes.title}>Generate and Download Link QR code </h2>
                     <CardContent>
                         <Grid container spacing={2}>
                             <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
@@ -61,6 +62,9 @@ function QrCode() {
 
                     </CardContent>
                 </Card>
+                <NavLink to='/image'>
+                    <Button variant="outlined" color="primary" className={classes.btn} >Image QR Code</Button>
+                </NavLink>
             </Container>
         </div>
     )

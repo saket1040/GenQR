@@ -4,6 +4,7 @@ const QRCode=require('qrcode');
 
 qrRouter.post("/scanQrcode",(req, res) => {
     const url=req.body.url;
+    //console.log(url);
     if(url.length===0){
         res.send("Empty Data")
     }
