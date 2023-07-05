@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<QrCode/>}/>
-        <Route exact path="/image" element={<QrImage/>}/>
+        <Route path="/image" element={<QrImage/>}/>
       </Routes>
       </BrowserRouter>
     </div>

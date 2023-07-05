@@ -9,7 +9,6 @@ qrRouter.post("/scanQrcode",(req, res) => {
         res.send("Empty Data")
     }
     QRCode.toDataURL(url,function(err,url){
-        console.log(url);
         res.send(url);
     })
 })
