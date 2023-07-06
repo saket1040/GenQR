@@ -38,7 +38,7 @@ function QrCode() {
   const generateQrcode = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/scanQrcode", { url: url })
+      .post("https://genback.onrender.com/api/scanQrcode", { url: url })
       .then((response) => {
         //console.log(response);
         setQrImage(response.data);
@@ -54,7 +54,10 @@ function QrCode() {
               <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
                 <TextField
                   label="Enter text here"
-                  onChange={(e) => setUrl(e.target.value)}
+                  onChange={(e) => {
+                    setQrImage("");
+                    setUrl(e.target.value)
+                  }}
                   value={url}
                 />
                 <Button

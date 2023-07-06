@@ -60,7 +60,9 @@ function QrImage() {
     //console.log(url);
 
     axios
-      .post("http://localhost:5000/api/scanQrcode", { url: respoJSON.url })
+      .post("https://genback.onrender.com/api/scanQrcode", {
+        url: respoJSON.url,
+      })
       .then((response) => {
         //console.log(response);
         setQrImage(response.data);
